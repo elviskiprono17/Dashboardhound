@@ -95,7 +95,7 @@ export function DashboardHeader({
         {/* Left: Brand + File details & Title */}
         <div className="flex items-center gap-3">
           <Link href="/" className="shrink-0 flex items-center">
-            <img src="/logo.png" alt="Dashboardhound" className="h-10 sm:h-11 w-auto object-contain" />
+            <img src="/logo.png" alt="Dashboardhound" className="h-[26px] w-auto object-contain" />
           </Link>
 
           <div className="h-6 w-px bg-slate-200 hidden sm:block" />

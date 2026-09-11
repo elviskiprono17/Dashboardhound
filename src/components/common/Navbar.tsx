@@ -14,14 +14,14 @@ export function Navbar() {
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur border-b border-slate-200/80 transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group py-2">
+          <Link href="/" className="flex items-center gap-3 group py-1">
             <div className="relative flex items-center">
               <img
                 src="/logo.png"
                 alt="Dashboardhound Logo"
-                className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-xs"
+                className="h-[29px] w-auto object-contain transition-transform group-hover:scale-105"
               />
             </div>
             <span className="sr-only">Dashboardhound</span>
