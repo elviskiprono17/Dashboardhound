@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Navbar } from '@/components/common/Navbar';
@@ -343,7 +343,9 @@ export default function HomePage() {
       <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Dashboardhound" className="h-8 w-auto brightness-200 object-contain" />
+            <div className="bg-white px-3.5 py-1.5 rounded-xl shadow-xs flex items-center">
+              <img src="/logo.png" alt="Dashboardhound" className="h-7 sm:h-8 w-auto object-contain" />
+            </div>
             <span className="text-slate-500 font-medium">
               © {new Date().getFullYear()} Dashboardhound.com. All rights reserved.
             </span>

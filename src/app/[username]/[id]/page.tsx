@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useEffect, useState, use } from 'react';
 import Link from 'next/link';
@@ -113,8 +113,8 @@ export default function SharedDashboardPage({ params }: SharedPageProps) {
       <header className="bg-white border-b border-slate-200/80 sticky top-0 z-30 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <Link href="/" className="shrink-0">
-              <img src="/logo.png" alt="Dashboardhound" className="h-8 w-auto object-contain" />
+            <Link href="/" className="shrink-0 flex items-center">
+              <img src="/logo.png" alt="Dashboardhound" className="h-10 sm:h-11 w-auto object-contain" />
             </Link>
             <div className="h-6 w-px bg-slate-200" />
             <div>
