@@ -48,9 +48,9 @@ export function ApiKeyModal({ isOpen, onClose, onKeySaved }: ApiKeyModalProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-in fade-in">
       <div className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden text-slate-800">
         {/* Header */}
-        <div className="px-6 py-5 bg-gradient-to-r from-slate-900 via-[#14364f] to-slate-900 text-white flex items-center justify-between">
+        <div className="px-6 py-5 bg-gradient-to-r from-slate-900 via-[#153e54] to-slate-900 text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-amber-400/20 rounded-lg text-amber-400 border border-amber-400/30">
+            <div className="p-2 bg-sky-400/20 rounded-lg text-sky-400 border border-sky-400/30">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
@@ -85,7 +85,7 @@ export function ApiKeyModal({ isOpen, onClose, onKeySaved }: ApiKeyModalProps) {
 
             <div className="space-y-2.5 text-sm">
               <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-3">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#14364f] text-white text-xs font-bold shrink-0">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#153e54] text-white text-xs font-bold shrink-0">
                   1
                 </span>
                 <div className="flex-1">
@@ -105,7 +105,7 @@ export function ApiKeyModal({ isOpen, onClose, onKeySaved }: ApiKeyModalProps) {
               </div>
 
               <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-3">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#14364f] text-white text-xs font-bold shrink-0">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#153e54] text-white text-xs font-bold shrink-0">
                   2
                 </span>
                 <div className="flex-1">
@@ -117,7 +117,7 @@ export function ApiKeyModal({ isOpen, onClose, onKeySaved }: ApiKeyModalProps) {
               </div>
 
               <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-3">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#14364f] text-white text-xs font-bold shrink-0">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#153e54] text-white text-xs font-bold shrink-0">
                   3
                 </span>
                 <div className="flex-1">
@@ -146,7 +146,7 @@ export function ApiKeyModal({ isOpen, onClose, onKeySaved }: ApiKeyModalProps) {
                   setApiKey(e.target.value);
                   setIsSaved(false);
                 }}
-                className="w-full pl-9 pr-4 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#14364f] focus:border-transparent font-mono"
+                className="w-full pl-9 pr-4 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#153e54] focus:border-transparent font-mono"
               />
             </div>
           </div>
@@ -169,7 +169,7 @@ export function ApiKeyModal({ isOpen, onClose, onKeySaved }: ApiKeyModalProps) {
               <button
                 onClick={handleSave}
                 disabled={!apiKey.trim()}
-                className="px-5 py-2 text-xs font-semibold bg-[#14364f] hover:bg-[#0f293d] text-white rounded-xl shadow-md disabled:opacity-50 transition-colors flex items-center gap-1.5"
+                className="px-5 py-2 text-xs font-semibold bg-[#153e54] hover:bg-[#0f293d] text-white rounded-xl shadow-md disabled:opacity-50 transition-colors flex items-center gap-1.5"
               >
                 {isSaved ? <CheckCircle2 className="w-4 h-4 text-emerald-400" /> : <Sparkles className="w-4 h-4" />}
                 {isSaved ? 'Saved!' : 'Save & Enable Gemini'}

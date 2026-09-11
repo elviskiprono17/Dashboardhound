@@ -28,7 +28,7 @@ interface LayoutProps {
   data: Record<string, any>[];
 }
 
-const COLORS = ['#14364f', '#f59e0b', '#0284c7', '#10b981', '#8b5cf6', '#f43f5e', '#64748b'];
+const COLORS = ['#153e54', '#0ea5e9', '#0284c7', '#10b981', '#8b5cf6', '#f43f5e', '#64748b'];
 
 export function ExecutiveLayout({ schema, data }: LayoutProps) {
   const primaryCol = schema.columns.find((c) => c.name === schema.detectedPrimaryMetric);
@@ -60,7 +60,7 @@ export function ExecutiveLayout({ schema, data }: LayoutProps) {
             <span className="text-[11px] font-bold uppercase tracking-wider">
               Total {primaryCol ? primaryCol.name.replace(/_/g, ' ') : 'Volume'}
             </span>
-            <div className="p-1.5 bg-amber-50 rounded-lg text-amber-600">
+            <div className="p-1.5 bg-sky-50 rounded-lg text-sky-600">
               <TrendingUp className="w-4 h-4" />
             </div>
           </div>
@@ -164,8 +164,8 @@ export function ExecutiveLayout({ schema, data }: LayoutProps) {
                 <AreaChart data={timeSeriesData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                   <defs>
                     <linearGradient id="colorMetric" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#14364f" stopOpacity={0.4} />
-                      <stop offset="95%" stopColor="#14364f" stopOpacity={0.0} />
+                      <stop offset="5%" stopColor="#153e54" stopOpacity={0.4} />
+                      <stop offset="95%" stopColor="#153e54" stopOpacity={0.0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
@@ -183,7 +183,7 @@ export function ExecutiveLayout({ schema, data }: LayoutProps) {
                   <Area
                     type="monotone"
                     dataKey="value"
-                    stroke="#14364f"
+                    stroke="#153e54"
                     strokeWidth={2.5}
                     fillOpacity={1}
                     fill="url(#colorMetric)"
@@ -279,7 +279,7 @@ export function ExecutiveLayout({ schema, data }: LayoutProps) {
                 </div>
                 <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-[#14364f] rounded-full transition-all"
+                    className="h-full bg-[#153e54] rounded-full transition-all"
                     style={{ width: `${item.percentage}%` }}
                   />
                 </div>

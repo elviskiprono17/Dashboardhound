@@ -25,11 +25,11 @@ export function StorytellingLayout({ schema, data }: LayoutProps) {
   return (
     <div className="space-y-8 max-w-5xl mx-auto">
       {/* Editorial Lead Card */}
-      <div className="bg-gradient-to-br from-[#14364f] via-[#1a4463] to-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 -translate-y-6 translate-x-6 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="bg-gradient-to-br from-[#153e54] via-[#1a4463] to-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 -translate-y-6 translate-x-6 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative z-10 max-w-2xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/30">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-bold uppercase tracking-wider border border-sky-500/30">
             <BookOpen className="w-3.5 h-3.5" /> Data Story & Narrative
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
@@ -37,7 +37,7 @@ export function StorytellingLayout({ schema, data }: LayoutProps) {
           </h2>
           <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
             Analyzing {data.length} records reveals an aggregate {primaryCol ? primaryCol.name.replace(/_/g, ' ') : 'metric'} of{' '}
-            <strong className="text-amber-400 underline decoration-amber-400/50">
+            <strong className="text-sky-400 underline decoration-sky-500/50">
               {primaryCol ? formatMetricValue(primaryCol.sum, primaryCol.type) : data.length.toLocaleString()}
             </strong>
             {categoryCol && topCategory
@@ -52,7 +52,7 @@ export function StorytellingLayout({ schema, data }: LayoutProps) {
         {/* Story 1 */}
         <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
-            <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 font-bold">
+            <div className="w-10 h-10 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center mb-4 font-bold">
               01
             </div>
             <h3 className="text-sm font-bold text-slate-900">Concentration of Momentum</h3>
@@ -64,7 +64,7 @@ export function StorytellingLayout({ schema, data }: LayoutProps) {
                 : `Uniform performance observed across all recorded items.`}
             </p>
           </div>
-          <div className="mt-4 pt-4 border-t border-slate-100 text-[11px] font-semibold text-amber-600">
+          <div className="mt-4 pt-4 border-t border-slate-100 text-[11px] font-semibold text-sky-600">
             Primary Growth Anchor
           </div>
         </div>
@@ -113,7 +113,7 @@ export function StorytellingLayout({ schema, data }: LayoutProps) {
       {categoryData.length > 0 && (
         <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
           <h3 className="text-base font-bold text-slate-900 mb-6 flex items-center gap-2">
-            <Target className="w-5 h-5 text-[#14364f]" /> Segment Contribution Breakdown
+            <Target className="w-5 h-5 text-[#153e54]" /> Segment Contribution Breakdown
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -129,7 +129,7 @@ export function StorytellingLayout({ schema, data }: LayoutProps) {
                       d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                     />
                     <path
-                      className="text-[#14364f]"
+                      className="text-[#153e54]"
                       strokeDasharray={`${cat.percentage}, 100`}
                       strokeWidth="3.5"
                       strokeLinecap="round"

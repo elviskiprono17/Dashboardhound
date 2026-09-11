@@ -33,8 +33,8 @@ export function MarketingLayout({ schema, data }: LayoutProps) {
   const total = data.length;
   const funnelStages = [
     { label: 'Impressions / Top of Funnel', count: total * 100, pct: '100%', color: 'bg-sky-500' },
-    { label: 'Engaged Visitors / Clicks', count: Math.round(total * 25), pct: '25%', color: 'bg-[#14364f]' },
-    { label: 'Evaluated / Retargeted', count: Math.round(total * 8), pct: '8%', color: 'bg-amber-500' },
+    { label: 'Engaged Visitors / Clicks', count: Math.round(total * 25), pct: '25%', color: 'bg-[#153e54]' },
+    { label: 'Evaluated / Retargeted', count: Math.round(total * 8), pct: '8%', color: 'bg-sky-500' },
     { label: 'Completed Conversions', count: total, pct: `${((1 / 100) * 100).toFixed(1)}%`, color: 'bg-emerald-500' },
   ];
 
@@ -45,7 +45,7 @@ export function MarketingLayout({ schema, data }: LayoutProps) {
         <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
           <div className="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center justify-between">
             <span>Primary Yield</span>
-            <Target className="w-4 h-4 text-[#14364f]" />
+            <Target className="w-4 h-4 text-[#153e54]" />
           </div>
           <div className="mt-3">
             <div className="text-2xl sm:text-3xl font-black text-slate-900">
@@ -71,7 +71,7 @@ export function MarketingLayout({ schema, data }: LayoutProps) {
         <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
           <div className="text-slate-400 text-[11px] font-bold uppercase tracking-wider flex items-center justify-between">
             <span>Top Acquisition Channel</span>
-            <Zap className="w-4 h-4 text-amber-500" />
+            <Zap className="w-4 h-4 text-sky-500" />
           </div>
           <div className="mt-3">
             <div className="text-xl sm:text-2xl font-black text-slate-900 truncate">
@@ -161,9 +161,9 @@ export function MarketingLayout({ schema, data }: LayoutProps) {
                   formatter={(val: any) => [formatMetricValue(Number(val), primaryCol?.type), 'Volume']}
                   contentStyle={{ borderRadius: '12px', fontSize: '11px' }}
                 />
-                <Bar dataKey="value" fill="#14364f" radius={[0, 6, 6, 0]}>
+                <Bar dataKey="value" fill="#153e54" radius={[0, 6, 6, 0]}>
                   {channelData.map((_, index) => (
-                    <Cell key={`cell-${index}`} fill={index === 0 ? '#f59e0b' : '#14364f'} />
+                    <Cell key={`cell-${index}`} fill={index === 0 ? '#0ea5e9' : '#153e54'} />
                   ))}
                 </Bar>
               </BarChart>

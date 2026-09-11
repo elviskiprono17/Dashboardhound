@@ -109,7 +109,7 @@ export function DashboardHeader({
                 onBlur={() => setIsEditingTitle(false)}
                 onKeyDown={(e) => e.key === 'Enter' && setIsEditingTitle(false)}
                 autoFocus
-                className="text-base font-bold text-slate-900 border-b-2 border-[#14364f] focus:outline-none bg-transparent"
+                className="text-base font-bold text-slate-900 border-b-2 border-[#153e54] focus:outline-none bg-transparent"
               />
             ) : (
               <div
@@ -117,7 +117,7 @@ export function DashboardHeader({
                 className="group flex items-center gap-2 cursor-pointer"
                 title="Click to rename"
               >
-                <h1 className="text-base sm:text-lg font-black text-slate-900 tracking-tight group-hover:text-[#14364f]">
+                <h1 className="text-base sm:text-lg font-black text-slate-900 tracking-tight group-hover:text-[#153e54]">
                   {title}
                 </h1>
                 <span className="text-[10px] text-slate-400 group-hover:text-slate-600 font-mono">✎</span>
@@ -144,11 +144,11 @@ export function DashboardHeader({
                 onClick={() => onLayoutChange(l.id)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
                   isActive
-                    ? 'bg-white text-[#14364f] shadow-sm'
+                    ? 'bg-white text-[#153e54] shadow-sm'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-[#14364f]' : 'text-slate-500'}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-[#153e54]' : 'text-slate-500'}`} />
                 <span>{l.label}</span>
               </button>
             );
@@ -160,9 +160,9 @@ export function DashboardHeader({
           {/* AI Hound Insights Trigger */}
           <button
             onClick={onOpenInsights}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#14364f] to-[#1e4e70] hover:from-[#0d2638] hover:to-[#14364f] text-white font-bold text-xs shadow-sm hover:shadow transition-all"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#153e54] to-[#1e4e70] hover:from-[#0d2638] hover:to-[#153e54] text-white font-bold text-xs shadow-sm hover:shadow transition-all"
           >
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <Sparkles className="w-3.5 h-3.5 text-sky-400" />
             <span>Hound Insights</span>
           </button>
 
@@ -171,7 +171,7 @@ export function DashboardHeader({
             onClick={handleShareClick}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold transition-colors shadow-sm"
           >
-            {!canShare ? <Lock className="w-3.5 h-3.5 text-amber-500" /> : <Share2 className="w-3.5 h-3.5 text-[#14364f]" />}
+            {!canShare ? <Lock className="w-3.5 h-3.5 text-sky-500" /> : <Share2 className="w-3.5 h-3.5 text-[#153e54]" />}
             <span>Share</span>
           </button>
 
@@ -180,7 +180,7 @@ export function DashboardHeader({
             onClick={handleSaveClick}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold transition-colors shadow-sm"
           >
-            {!canSave ? <Lock className="w-3.5 h-3.5 text-amber-500" /> : <Bookmark className="w-3.5 h-3.5 text-[#14364f]" />}
+            {!canSave ? <Lock className="w-3.5 h-3.5 text-sky-500" /> : <Bookmark className="w-3.5 h-3.5 text-[#153e54]" />}
             <span>Save</span>
           </button>
 
@@ -190,7 +190,7 @@ export function DashboardHeader({
               onClick={() => setIsExportOpen(!isExportOpen)}
               className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold transition-colors shadow-sm"
             >
-              <Download className="w-3.5 h-3.5 text-[#14364f]" />
+              <Download className="w-3.5 h-3.5 text-[#153e54]" />
               <span>Export</span>
               <ChevronDown className="w-3 h-3 text-slate-400" />
             </button>
@@ -202,10 +202,10 @@ export function DashboardHeader({
                   className="w-full px-4 py-2 text-left hover:bg-slate-50 flex items-center justify-between text-slate-700"
                 >
                   <div className="flex items-center gap-2">
-                    <FileCode className="w-4 h-4 text-amber-600" />
+                    <FileCode className="w-4 h-4 text-sky-600" />
                     <span>Standalone Interactive HTML</span>
                   </div>
-                  {!canExport && <Lock className="w-3 h-3 text-amber-500" />}
+                  {!canExport && <Lock className="w-3 h-3 text-sky-500" />}
                 </button>
 
                 <button
@@ -216,7 +216,7 @@ export function DashboardHeader({
                     <FileText className="w-4 h-4 text-sky-600" />
                     <span>Executive PDF Report</span>
                   </div>
-                  {!canExport && <Lock className="w-3 h-3 text-amber-500" />}
+                  {!canExport && <Lock className="w-3 h-3 text-sky-500" />}
                 </button>
 
                 <button
@@ -227,7 +227,7 @@ export function DashboardHeader({
                     <Presentation className="w-4 h-4 text-rose-600" />
                     <span>PowerPoint (PPTX) Deck</span>
                   </div>
-                  {!canExport && <Lock className="w-3 h-3 text-amber-500" />}
+                  {!canExport && <Lock className="w-3 h-3 text-sky-500" />}
                 </button>
 
                 <div className="border-t border-slate-100 my-1" />

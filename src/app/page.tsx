@@ -195,17 +195,17 @@ export default function HomePage() {
 
         {/* Free Plan Session Banner */}
         {tier === 'free' && (
-          <div className="bg-amber-50 border-b border-amber-200/80 px-4 py-2 text-xs text-amber-900">
+          <div className="bg-sky-50 border-b border-sky-200/80 px-4 py-2 text-xs text-sky-950">
             <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div className="flex items-center gap-2">
-                <Lock className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                <Lock className="w-3.5 h-3.5 text-sky-600 shrink-0" />
                 <span>
                   <strong>Free Browser Session:</strong> This dashboard is stored in browser memory and disappears if tab is closed.
                 </span>
               </div>
               <button
                 onClick={() => openPaywall('Upgrade to Starter ($19/mo) to save dashboards permanently and create shareable links.', 'starter')}
-                className="font-bold underline hover:text-amber-950 text-left sm:text-right"
+                className="font-bold underline hover:text-sky-950 text-left sm:text-right"
               >
                 Upgrade to Save & Share →
               </button>
@@ -268,7 +268,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3">
-                <Layers className="w-4 h-4 text-[#14364f]" /> 5 Purpose-Built Layouts
+                <Layers className="w-4 h-4 text-[#153e54]" /> 5 Purpose-Built Layouts
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
                 One File. Five Executive Dashboard Views.
@@ -279,7 +279,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-[#14364f] transition-all">
+              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-[#153e54] transition-all">
                 <div className="text-xl mb-3">👔</div>
                 <h3 className="text-base font-bold text-slate-900">Executive KPI & Trends</h3>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -287,7 +287,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-3xl bg-slate-900 text-white border border-slate-800 hover:border-amber-400 transition-all">
+              <div className="p-6 rounded-3xl bg-slate-900 text-white border border-slate-800 hover:border-sky-400 transition-all">
                 <div className="text-xl mb-3">💼</div>
                 <h3 className="text-base font-bold text-white">Financial Dark Minimalist</h3>
                 <p className="text-xs text-slate-300 mt-1 leading-relaxed">
@@ -295,7 +295,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-[#14364f] transition-all">
+              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-[#153e54] transition-all">
                 <div className="text-xl mb-3">🔬</div>
                 <h3 className="text-base font-bold text-slate-900">Data Explorer & Deep Dive</h3>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -303,7 +303,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-[#14364f] transition-all">
+              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-[#153e54] transition-all">
                 <div className="text-xl mb-3">🎨</div>
                 <h3 className="text-base font-bold text-slate-900">Visual Storytelling</h3>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -311,7 +311,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-[#14364f] transition-all">
+              <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200/80 hover:border-[#153e54] transition-all">
                 <div className="text-xl mb-3">🚀</div>
                 <h3 className="text-base font-bold text-slate-900">Marketing & Funnel Analytics</h3>
                 <p className="text-xs text-slate-600 mt-1 leading-relaxed">
@@ -319,15 +319,15 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-3xl bg-gradient-to-br from-[#14364f] to-[#0c2334] text-white border border-[#14364f] transition-all flex flex-col justify-between">
+              <div className="p-6 rounded-3xl bg-gradient-to-br from-[#153e54] to-[#0c2334] text-white border border-[#153e54] transition-all flex flex-col justify-between">
                 <div>
                   <div className="text-xl mb-3">🌐</div>
                   <h3 className="text-base font-bold text-white">Vanity Share Links</h3>
                   <p className="text-xs text-slate-200 mt-1 leading-relaxed">
-                    Publish under <code className="text-amber-300 font-mono text-[11px]">www.abloh.dashboardhound.com/id</code> or your own white-labeled custom domain.
+                    Publish under <code className="text-sky-300 font-mono text-[11px]">www.abloh.dashboardhound.com/id</code> or your own white-labeled custom domain.
                   </p>
                 </div>
-                <div className="mt-4 text-[11px] text-amber-300 font-semibold flex items-center gap-1">
+                <div className="mt-4 text-[11px] text-sky-300 font-semibold flex items-center gap-1">
                   <Sparkles className="w-3.5 h-3.5" /> Client-ready in 1 click
                 </div>
               </div>

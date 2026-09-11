@@ -35,7 +35,7 @@ export function FinancialDarkLayout({ schema, data }: LayoutProps) {
       <div className="flex items-center justify-between border-b border-slate-800 pb-4">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-rose-500" />
-          <div className="w-3 h-3 rounded-full bg-amber-500" />
+          <div className="w-3 h-3 rounded-full bg-sky-500" />
           <div className="w-3 h-3 rounded-full bg-emerald-500" />
           <span className="text-xs text-slate-400 ml-2 font-mono uppercase tracking-wider">
             FINANCIAL_TERMINAL // {data.length} RECORDS PROCESSED
@@ -48,7 +48,7 @@ export function FinancialDarkLayout({ schema, data }: LayoutProps) {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
           <div className="text-[11px] text-slate-400 uppercase">Gross Aggregation</div>
-          <div className="text-2xl font-bold text-amber-400 mt-1">
+          <div className="text-2xl font-bold text-sky-400 mt-1">
             {primaryCol ? formatMetricValue(primaryCol.sum, primaryCol.type) : data.length.toLocaleString()}
           </div>
           <div className="text-[10px] text-slate-500 mt-1 font-sans">
@@ -113,9 +113,9 @@ export function FinancialDarkLayout({ schema, data }: LayoutProps) {
                 contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '8px', fontSize: '11px', color: '#f8fafc' }}
                 formatter={(val: any) => [formatMetricValue(Number(val), primaryCol?.type), 'Amount']}
               />
-              <Bar dataKey="value" fill="#f59e0b" radius={[4, 4, 0, 0]}>
+              <Bar dataKey="value" fill="#0ea5e9" radius={[4, 4, 0, 0]}>
                 {categoryData.map((_, index) => (
-                  <Cell key={`cell-${index}`} fill={index === 0 ? '#f59e0b' : '#38bdf8'} />
+                  <Cell key={`cell-${index}`} fill={index === 0 ? '#0ea5e9' : '#38bdf8'} />
                 ))}
               </Bar>
             </BarChart>

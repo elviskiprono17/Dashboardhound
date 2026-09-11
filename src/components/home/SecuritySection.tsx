@@ -56,7 +56,7 @@ export function SecuritySection() {
 
           {/* Card 3: Zero AI Hallucination */}
           <div className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-5">
+            <div className="w-12 h-12 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center mb-5">
               <Sparkles className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-slate-900 mb-2">
@@ -65,8 +65,8 @@ export function SecuritySection() {
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Instead of feeding raw text into an LLM, Gemini Flash is provided only pre-calculated mathematical summaries. The AI never attempts mental arithmetic, ensuring 100% accuracy.
             </p>
-            <div className="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-amber-700">
-              <CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0" />
+            <div className="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-sky-700">
+              <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
               <span>Guaranteed math integrity</span>
             </div>
           </div>

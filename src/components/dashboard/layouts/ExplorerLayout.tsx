@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import {
@@ -75,7 +75,7 @@ export function ExplorerLayout({ schema, data }: LayoutProps) {
       <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Table className="w-4 h-4 text-[#14364f]" />
+            <Table className="w-4 h-4 text-[#153e54]" />
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700">
               Column Profiling Schema ({schema.columns.length} Dimensions)
             </h3>
@@ -92,7 +92,7 @@ export function ExplorerLayout({ schema, data }: LayoutProps) {
                 {c.name}
               </div>
               <div className="flex items-center justify-between text-[10px] text-slate-500 mt-1">
-                <span className="uppercase font-semibold text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">
+                <span className="uppercase font-semibold text-sky-600 bg-sky-50 px-1.5 py-0.5 rounded">
                   {c.type}
                 </span>
                 <span>{c.uniqueCount} distinct</span>
@@ -108,7 +108,7 @@ export function ExplorerLayout({ schema, data }: LayoutProps) {
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <BarChart2 className="w-4 h-4 text-[#14364f]" /> Bivariate Correlation Matrix
+                <BarChart2 className="w-4 h-4 text-[#153e54]" /> Bivariate Correlation Matrix
               </h3>
               <p className="text-xs text-slate-500">
                 X-Axis: <strong>{colX.name}</strong> vs Y-Axis: <strong>{colY.name}</strong>
@@ -142,7 +142,7 @@ export function ExplorerLayout({ schema, data }: LayoutProps) {
                   formatter={(val: any, name?: any) => [val, name ?? '']}
                   contentStyle={{ borderRadius: '12px', fontSize: '11px' }}
                 />
-                <Scatter name="Records" data={scatterData} fill="#14364f" />
+                <Scatter name="Records" data={scatterData} fill="#153e54" />
               </ScatterChart>
             </ResponsiveContainer>
           </div>

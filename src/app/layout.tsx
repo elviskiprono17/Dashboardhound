@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full scroll-smooth">
-      <body className="min-h-full flex flex-col antialiased bg-slate-50 text-slate-900 selection:bg-amber-400 selection:text-slate-950">
+      <body className="min-h-full flex flex-col antialiased bg-slate-50 text-slate-900 selection:bg-sky-500 selection:text-white">
         <SubscriptionProvider>
           {children}
           <PaywallModal />

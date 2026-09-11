@@ -85,8 +85,8 @@ export function Dropzone({ onDataLoaded, className = '' }: DropzoneProps) {
         onClick={() => !isParsing && fileInputRef.current?.click()}
         className={`relative cursor-pointer rounded-3xl border-2 border-dashed p-8 sm:p-12 text-center transition-all group overflow-hidden ${
           isDragging
-            ? 'border-amber-500 bg-amber-50/50 scale-[1.01]'
-            : 'border-slate-300 hover:border-[#14364f] bg-white/80 hover:bg-slate-50/70 shadow-xl shadow-slate-200/50'
+            ? 'border-sky-500 bg-sky-50/50 scale-[1.01]'
+            : 'border-slate-300 hover:border-[#153e54] bg-white/80 hover:bg-slate-50/70 shadow-xl shadow-slate-200/50'
         }`}
       >
         <input
@@ -99,13 +99,13 @@ export function Dropzone({ onDataLoaded, className = '' }: DropzoneProps) {
         />
 
         {/* Ambient Glow */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sky-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
         {isParsing ? (
           <div className="py-8 flex flex-col items-center justify-center space-y-4">
             <div className="relative">
-              <Loader2 className="w-12 h-12 text-[#14364f] animate-spin" />
-              <div className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-[#14364f]">
+              <Loader2 className="w-12 h-12 text-[#153e54] animate-spin" />
+              <div className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-[#153e54]">
                 {progress}%
               </div>
             </div>
@@ -119,13 +119,13 @@ export function Dropzone({ onDataLoaded, className = '' }: DropzoneProps) {
         ) : (
           <div className="flex flex-col items-center justify-center space-y-4">
             {/* Upload Icon Circle */}
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#14364f] to-[#1e5276] text-amber-400 flex items-center justify-center shadow-lg shadow-[#14364f]/20 group-hover:scale-110 transition-transform">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#153e54] to-[#1e5276] text-sky-400 flex items-center justify-center shadow-lg shadow-[#153e54]/20 group-hover:scale-110 transition-transform">
               <UploadCloud className="w-8 h-8" />
             </div>
 
             <div className="max-w-md">
               <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">
-                Drag & drop your file here, or <span className="text-[#14364f] underline decoration-amber-400 decoration-2 underline-offset-4">browse</span>
+                Drag & drop your file here, or <span className="text-[#153e54] underline decoration-sky-400 decoration-2 underline-offset-4">browse</span>
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 mt-2">
                 Supports Excel (<code className="font-semibold text-slate-700">.xlsx, .xls</code>), Comma-separated (<code className="font-semibold text-slate-700">.csv</code>), Tab-separated (<code className="font-semibold text-slate-700">.tsv</code>), and <code className="font-semibold text-slate-700">.json</code>

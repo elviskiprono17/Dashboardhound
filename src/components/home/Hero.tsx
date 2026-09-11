@@ -14,16 +14,16 @@ export function Hero({ onDatasetSelected }: HeroProps) {
     switch (iconName) {
       case 'trending-up': return <TrendingUp className="w-4 h-4 text-emerald-500" />;
       case 'shopping-cart': return <ShoppingCart className="w-4 h-4 text-sky-500" />;
-      case 'target': return <Target className="w-4 h-4 text-amber-500" />;
+      case 'target': return <Target className="w-4 h-4 text-sky-500" />;
       case 'pie-chart': return <PieChart className="w-4 h-4 text-indigo-500" />;
-      default: return <Sparkles className="w-4 h-4 text-amber-500" />;
+      default: return <Sparkles className="w-4 h-4 text-sky-500" />;
     }
   };
 
   return (
     <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 overflow-hidden">
       {/* Background radial gradients */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-sky-100/60 via-amber-100/30 to-transparent blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-sky-100/60 via-sky-100/30 to-transparent blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Trust Pill */}
@@ -38,7 +38,7 @@ export function Hero({ onDatasetSelected }: HeroProps) {
         <div className="text-center max-w-4xl mx-auto mb-10">
           <h1 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[1.1]">
             Turn Any File Into an <br className="hidden sm:block" />
-            <span className="bg-gradient-to-r from-[#14364f] via-[#1f5880] to-amber-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#153e54] via-[#1f5880] to-sky-600 bg-clip-text text-transparent">
               Interactive Dashboard
             </span>
           </h1>
@@ -63,25 +63,25 @@ export function Hero({ onDatasetSelected }: HeroProps) {
               <button
                 key={sample.id}
                 onClick={() => onDatasetSelected(sample.data, sample.fileName, 24500)}
-                className="p-3.5 rounded-2xl bg-white border border-slate-200/90 hover:border-[#14364f] hover:shadow-md hover:-translate-y-0.5 transition-all text-left group flex flex-col justify-between"
+                className="p-3.5 rounded-2xl bg-white border border-slate-200/90 hover:border-[#153e54] hover:shadow-md hover:-translate-y-0.5 transition-all text-left group flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-1.5">
-                    <div className="p-1.5 bg-slate-100 rounded-lg group-hover:bg-[#14364f]/10 transition-colors">
+                    <div className="p-1.5 bg-slate-100 rounded-lg group-hover:bg-[#153e54]/10 transition-colors">
                       {getIcon(sample.icon)}
                     </div>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 group-hover:bg-[#14364f] group-hover:text-white transition-colors">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 group-hover:bg-[#153e54] group-hover:text-white transition-colors">
                       {sample.badge}
                     </span>
                   </div>
-                  <h4 className="font-bold text-xs text-slate-900 line-clamp-1 group-hover:text-[#14364f]">
+                  <h4 className="font-bold text-xs text-slate-900 line-clamp-1 group-hover:text-[#153e54]">
                     {sample.name}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 line-clamp-2">
                     {sample.description}
                   </p>
                 </div>
-                <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-semibold text-slate-600 group-hover:text-[#14364f]">
+                <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-semibold text-slate-600 group-hover:text-[#153e54]">
                   <span>1-Click Launch</span>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                 </div>

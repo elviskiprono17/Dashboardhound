@@ -28,12 +28,12 @@ export function PricingSection() {
   return (
     <section id="pricing" className="py-20 bg-slate-900 text-white relative overflow-hidden">
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4 border border-white/10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-sky-300 text-xs font-bold uppercase tracking-wider mb-4 border border-white/10">
             Transparent, Value-Driven Pricing
           </div>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
@@ -56,11 +56,11 @@ export function PricingSection() {
             <button
               onClick={() => setBillingCycle('annually')}
               className={`px-5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
-                billingCycle === 'annually' ? 'bg-amber-400 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
+                billingCycle === 'annually' ? 'bg-sky-400 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
               }`}
             >
               <span>Annual Billing</span>
-              <span className="text-[10px] uppercase tracking-wider bg-slate-950 text-amber-300 px-2 py-0.5 rounded-full font-extrabold">
+              <span className="text-[10px] uppercase tracking-wider bg-slate-950 text-sky-300 px-2 py-0.5 rounded-full font-extrabold">
                 Save 20%
               </span>
             </button>
@@ -72,7 +72,7 @@ export function PricingSection() {
           {/* 1. Free Tier */}
           <div className="rounded-3xl p-7 bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 transition-all flex flex-col justify-between">
             <div>
-              <div className="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">
+              <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-1">
                 The Growth Engine
               </div>
               <h3 className="text-xl font-extrabold text-white">Free</h3>
@@ -181,13 +181,13 @@ export function PricingSection() {
           </div>
 
           {/* 3. Pro / Business Plan */}
-          <div className="rounded-3xl p-7 bg-gradient-to-b from-slate-800 to-slate-850 border-2 border-amber-400 hover:border-amber-300 transition-all flex flex-col justify-between relative shadow-2xl shadow-amber-950/50">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md flex items-center gap-1">
+          <div className="rounded-3xl p-7 bg-gradient-to-b from-slate-800 to-slate-850 border-2 border-sky-400 hover:border-sky-300 transition-all flex flex-col justify-between relative shadow-2xl shadow-sky-950/50">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sky-400 to-sky-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md flex items-center gap-1">
               <Sparkles className="w-3 h-3" /> The Sweet Spot for Teams
             </div>
 
             <div>
-              <div className="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">
+              <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-1">
                 Small Agencies & Departments
               </div>
               <h3 className="text-xl font-extrabold text-white">Pro / Business</h3>
@@ -199,29 +199,29 @@ export function PricingSection() {
                 <span className="text-4xl font-black text-white">${proPrice}</span>
                 <span className="text-xs text-slate-400"> / month</span>
                 {billingCycle === 'annually' && (
-                  <div className="text-[11px] text-amber-300 font-semibold mt-1">$948 billed annually</div>
+                  <div className="text-[11px] text-sky-300 font-semibold mt-1">$948 billed annually</div>
                 )}
               </div>
 
               <ul className="space-y-3 text-xs text-slate-200 mb-8">
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
                   <span><strong>200MB</strong> file upload limit</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
                   <span><strong>Standalone HTML, PDF & PPTX</strong> exports</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
                   <span><strong>Template Preservation</strong> (effortless weekly re-upload)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
                   <span><strong>Multi-user seat access</strong> (up to 3 team members)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
                   <span><strong>Unlimited Summaries + 500 Chatbot Queries / mo</strong></span>
                 </li>
               </ul>
@@ -231,8 +231,8 @@ export function PricingSection() {
               onClick={() => handleSelectPlan('pro')}
               className={`w-full py-3 rounded-2xl text-xs font-extrabold transition-all shadow-lg ${
                 tier === 'pro'
-                  ? 'bg-amber-400 text-slate-950 cursor-default'
-                  : 'bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950'
+                  ? 'bg-sky-400 text-slate-950 cursor-default'
+                  : 'bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400 text-slate-950'
               }`}
             >
               {tier === 'pro' ? 'Current Plan' : 'Upgrade to Pro'}

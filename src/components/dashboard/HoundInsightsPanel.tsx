@@ -133,9 +133,9 @@ export function HoundInsightsPanel({
   return (
     <div className="fixed inset-y-0 right-0 z-50 w-full max-w-xl bg-white shadow-2xl border-l border-slate-200 flex flex-col overflow-hidden text-slate-800 animate-in slide-in-from-right duration-300">
       {/* Header */}
-      <div className="px-6 py-5 bg-gradient-to-r from-slate-900 via-[#14364f] to-slate-900 text-white flex items-center justify-between shadow-md">
+      <div className="px-6 py-5 bg-gradient-to-r from-slate-900 via-[#153e54] to-slate-900 text-white flex items-center justify-between shadow-md">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-amber-400/20 text-amber-300 rounded-xl border border-amber-400/30">
+          <div className="p-2 bg-sky-500/20 text-sky-300 rounded-xl border border-sky-500/30">
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
@@ -160,7 +160,7 @@ export function HoundInsightsPanel({
       {/* Token Tracker Bar */}
       <div className="px-6 py-2.5 bg-slate-100 border-b border-slate-200/80 flex items-center justify-between text-xs">
         <div className="flex items-center gap-1.5 text-slate-600 font-medium">
-          <Zap className="w-3.5 h-3.5 text-amber-500" />
+          <Zap className="w-3.5 h-3.5 text-sky-500" />
           <span>
             {tier === 'enterprise' || tier === 'pro' ? (
               <strong className="text-emerald-700">Unlimited AI Queries Active</strong>
@@ -175,7 +175,7 @@ export function HoundInsightsPanel({
         {tier === 'free' && (
           <button
             onClick={() => openPaywall('Upgrade to Starter ($19/mo) for 100 monthly AI queries.', 'starter')}
-            className="text-[11px] text-amber-700 font-bold hover:underline flex items-center gap-1"
+            className="text-[11px] text-sky-700 font-bold hover:underline flex items-center gap-1"
           >
             <Lock className="w-3 h-3" /> Get More
           </button>
@@ -187,7 +187,7 @@ export function HoundInsightsPanel({
         {/* Generate / Overview Section */}
         {!insights ? (
           <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 text-center space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto">
+            <div className="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center mx-auto">
               <Sparkles className="w-6 h-6" />
             </div>
             <div>
@@ -199,7 +199,7 @@ export function HoundInsightsPanel({
             <button
               onClick={handleGenerateSummary}
               disabled={isGenerating}
-              className="px-6 py-2.5 rounded-xl bg-[#14364f] hover:bg-[#0d2638] text-white font-bold text-xs shadow-md transition-all flex items-center gap-2 mx-auto disabled:opacity-50"
+              className="px-6 py-2.5 rounded-xl bg-[#153e54] hover:bg-[#0d2638] text-white font-bold text-xs shadow-md transition-all flex items-center gap-2 mx-auto disabled:opacity-50"
             >
               {isGenerating ? (
                 <>
@@ -208,7 +208,7 @@ export function HoundInsightsPanel({
                 </>
               ) : (
                 <>
-                  <Sparkles className="w-4 h-4 text-amber-400" />
+                  <Sparkles className="w-4 h-4 text-sky-400" />
                   <span>Generate Executive Summary</span>
                 </>
               )}
@@ -242,14 +242,14 @@ export function HoundInsightsPanel({
 
             {/* Anomalies Card */}
             {insights.anomalies && insights.anomalies.length > 0 && (
-              <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 space-y-2">
-                <div className="flex items-center gap-1.5 text-xs font-bold text-amber-900">
-                  <AlertTriangle className="w-4 h-4 text-amber-600" /> Statistical Integrity & Anomalies
+              <div className="p-4 rounded-2xl bg-sky-50/70 border border-sky-200/80 space-y-2">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-sky-950">
+                  <AlertTriangle className="w-4 h-4 text-sky-600" /> Statistical Integrity & Anomalies
                 </div>
-                <ul className="space-y-1.5 text-xs text-amber-950">
+                <ul className="space-y-1.5 text-xs text-sky-950">
                   {insights.anomalies.map((ano, i) => (
                     <li key={i} className="flex items-start gap-1.5">
-                      <span className="text-amber-500 font-bold">•</span>
+                      <span className="text-sky-500 font-bold">•</span>
                       <span>{ano}</span>
                     </li>
                   ))}
@@ -286,7 +286,7 @@ export function HoundInsightsPanel({
                 <button
                   key={i}
                   onClick={() => handleSendQuery(sq)}
-                  className="p-2.5 rounded-xl bg-slate-50 hover:bg-[#14364f]/10 text-slate-700 hover:text-[#14364f] border border-slate-200 text-xs text-left font-medium transition-colors"
+                  className="p-2.5 rounded-xl bg-slate-50 hover:bg-[#153e54]/10 text-slate-700 hover:text-[#153e54] border border-slate-200 text-xs text-left font-medium transition-colors"
                 >
                   "{sq}"
                 </button>
@@ -299,7 +299,7 @@ export function HoundInsightsPanel({
                   <div
                     className={`p-3 rounded-2xl text-xs max-w-[85%] leading-relaxed ${
                       m.role === 'user'
-                        ? 'bg-[#14364f] text-white rounded-br-none'
+                        ? 'bg-[#153e54] text-white rounded-br-none'
                         : 'bg-slate-100 text-slate-900 border border-slate-200 rounded-bl-none'
                     }`}
                   >
@@ -328,12 +328,12 @@ export function HoundInsightsPanel({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSendQuery()}
-          className="flex-1 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#14364f]"
+          className="flex-1 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#153e54]"
         />
         <button
           onClick={() => handleSendQuery()}
           disabled={!query.trim() || isAnswering}
-          className="p-2.5 rounded-xl bg-[#14364f] hover:bg-[#0d2638] text-white disabled:opacity-40 transition-colors shadow-sm"
+          className="p-2.5 rounded-xl bg-[#153e54] hover:bg-[#0d2638] text-white disabled:opacity-40 transition-colors shadow-sm"
         >
           <Send className="w-4 h-4" />
         </button>

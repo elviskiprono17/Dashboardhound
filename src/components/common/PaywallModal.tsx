@@ -42,12 +42,12 @@ export function PaywallModal() {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm animate-in fade-in">
       <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden text-slate-800">
         {/* Banner */}
-        <div className="bg-gradient-to-r from-[#0d2638] via-[#14364f] to-[#1c4768] text-white px-6 py-6 sm:px-8 relative overflow-hidden">
-          <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-gradient-to-r from-[#0d2638] via-[#153e54] to-[#1c4768] text-white px-6 py-6 sm:px-8 relative overflow-hidden">
+          <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
           
           <div className="flex items-start justify-between relative z-10">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/30 text-amber-300 text-xs font-bold tracking-wide uppercase mb-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-500/30 text-sky-300 text-xs font-bold tracking-wide uppercase mb-2">
                 <Lock className="w-3.5 h-3.5" /> Feature Paywall
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
@@ -80,13 +80,13 @@ export function PaywallModal() {
               <button
                 onClick={() => setBillingCycle('annually')}
                 className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all flex items-center gap-1.5 ${
-                  billingCycle === 'annually' ? 'bg-amber-400 text-slate-950 font-bold shadow' : 'text-slate-300 hover:text-white'
+                  billingCycle === 'annually' ? 'bg-sky-400 text-slate-950 font-bold shadow' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 Annually (Save ~20%)
               </button>
             </div>
-            <span className="text-xs text-amber-300 font-medium">⚡ Instant activation • Cancel anytime</span>
+            <span className="text-xs text-sky-300 font-medium">⚡ Instant activation • Cancel anytime</span>
           </div>
         </div>
 
@@ -150,18 +150,18 @@ export function PaywallModal() {
           <div
             className={`rounded-2xl p-6 border relative transition-all flex flex-col justify-between ${
               recommendedTier === 'pro' || recommendedTier === 'starter'
-                ? 'border-amber-400 bg-amber-50/20 shadow-xl ring-2 ring-amber-400/50'
+                ? 'border-sky-400 bg-sky-50/20 shadow-xl ring-2 ring-sky-500/50'
                 : 'border-slate-200 bg-white hover:border-slate-300'
             }`}
           >
-            <div className="absolute -top-3 right-6 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow">
+            <div className="absolute -top-3 right-6 bg-gradient-to-r from-sky-500 to-sky-600 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow">
               Most Popular
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-2">
                 <h3 className="font-bold text-slate-900 text-lg flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-amber-500" /> Pro / Business
+                  <Sparkles className="w-4 h-4 text-sky-500" /> Pro / Business
                 </h3>
               </div>
               <p className="text-xs text-slate-500 mb-4">
@@ -175,23 +175,23 @@ export function PaywallModal() {
 
               <ul className="space-y-2.5 text-xs text-slate-700 mb-6">
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-600 shrink-0" />
+                  <Check className="w-4 h-4 text-sky-600 shrink-0" />
                   <span><strong>200MB</strong> file upload limit</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-600 shrink-0" />
+                  <Check className="w-4 h-4 text-sky-600 shrink-0" />
                   <span><strong>Standalone HTML, PDF & PPTX</strong> exports</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-600 shrink-0" />
+                  <Check className="w-4 h-4 text-sky-600 shrink-0" />
                   <span><strong>Template Preservation</strong> (effortless weekly re-upload)</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-600 shrink-0" />
+                  <Check className="w-4 h-4 text-sky-600 shrink-0" />
                   <span><strong>3 Team Member Seats</strong></span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-600 shrink-0" />
+                  <Check className="w-4 h-4 text-sky-600 shrink-0" />
                   <span><strong>Unlimited Summaries + 500 Chat Queries</strong></span>
                 </li>
               </ul>
@@ -199,9 +199,9 @@ export function PaywallModal() {
 
             <button
               onClick={() => handleUpgrade('pro')}
-              className="w-full py-2.5 rounded-xl font-bold text-xs bg-[#14364f] hover:bg-[#0f293d] text-white transition-colors shadow-md flex items-center justify-center gap-1.5"
+              className="w-full py-2.5 rounded-xl font-bold text-xs bg-[#153e54] hover:bg-[#0f293d] text-white transition-colors shadow-md flex items-center justify-center gap-1.5"
             >
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Upgrade to Pro
+              <Sparkles className="w-3.5 h-3.5 text-sky-400" /> Upgrade to Pro
             </button>
           </div>
 

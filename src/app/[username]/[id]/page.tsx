@@ -48,7 +48,7 @@ export default function SharedDashboardPage({ params }: SharedPageProps) {
   if (loading) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 text-slate-600">
-        <Loader2 className="w-10 h-10 animate-spin text-[#14364f] mb-3" />
+        <Loader2 className="w-10 h-10 animate-spin text-[#153e54] mb-3" />
         <p className="text-xs font-semibold">Decrypting in-browser shared dashboard...</p>
       </div>
     );
@@ -66,7 +66,7 @@ export default function SharedDashboardPage({ params }: SharedPageProps) {
         </p>
         <Link
           href="/"
-          className="px-5 py-2.5 rounded-xl bg-[#14364f] text-white text-xs font-bold shadow-md hover:bg-slate-900 transition-colors inline-flex items-center gap-2"
+          className="px-5 py-2.5 rounded-xl bg-[#153e54] text-white text-xs font-bold shadow-md hover:bg-slate-900 transition-colors inline-flex items-center gap-2"
         >
           <ArrowLeft className="w-4 h-4" /> Create Your Own Dashboard
         </Link>
@@ -87,11 +87,11 @@ export default function SharedDashboardPage({ params }: SharedPageProps) {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* Top Banner */}
-      <div className="bg-[#14364f] text-white px-4 py-2 text-xs flex items-center justify-between">
+      <div className="bg-[#153e54] text-white px-4 py-2 text-xs flex items-center justify-between">
         <div className="flex items-center gap-2 max-w-7xl mx-auto w-full justify-between">
           <div className="flex items-center gap-2">
             <span className="font-bold tracking-wide flex items-center gap-1.5">
-              <User className="w-3.5 h-3.5 text-amber-400" />
+              <User className="w-3.5 h-3.5 text-sky-400" />
               <span>Published by <strong>@{dashboard.username || username}</strong></span>
             </span>
             <span className="hidden sm:inline text-slate-300">•</span>
@@ -102,7 +102,7 @@ export default function SharedDashboardPage({ params }: SharedPageProps) {
 
           <Link
             href="/"
-            className="text-[11px] font-bold bg-amber-400 text-slate-950 px-3 py-1 rounded-full hover:bg-amber-300 transition-colors flex items-center gap-1 shrink-0"
+            className="text-[11px] font-bold bg-sky-400 text-slate-950 px-3 py-1 rounded-full hover:bg-sky-300 transition-colors flex items-center gap-1 shrink-0"
           >
             <Sparkles className="w-3 h-3" /> Create Yours Free
           </Link>
@@ -137,10 +137,10 @@ export default function SharedDashboardPage({ params }: SharedPageProps) {
                   key={l.id}
                   onClick={() => setLayout(l.id)}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
-                    isActive ? 'bg-white text-[#14364f] shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                    isActive ? 'bg-white text-[#153e54] shadow-sm' : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-[#14364f]' : 'text-slate-500'}`} />
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-[#153e54]' : 'text-slate-500'}`} />
                   <span>{l.label}</span>
                 </button>
               );
@@ -153,12 +153,12 @@ export default function SharedDashboardPage({ params }: SharedPageProps) {
               onClick={() => exportToCsv(filteredData, dashboard.fileName)}
               className="px-3.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-sm"
             >
-              <Download className="w-3.5 h-3.5 text-[#14364f]" />
+              <Download className="w-3.5 h-3.5 text-[#153e54]" />
               <span>Export CSV</span>
             </button>
             <button
               onClick={() => exportStandaloneHtml(dashboard)}
-              className="px-3.5 py-1.5 rounded-xl bg-[#14364f] hover:bg-slate-900 text-white text-xs font-bold transition-colors flex items-center gap-1.5 shadow-sm"
+              className="px-3.5 py-1.5 rounded-xl bg-[#153e54] hover:bg-slate-900 text-white text-xs font-bold transition-colors flex items-center gap-1.5 shadow-sm"
             >
               <span>Download HTML</span>
             </button>
@@ -192,7 +192,7 @@ export default function SharedDashboardPage({ params }: SharedPageProps) {
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             <span>Shared securely via Dashboardhound. Files processed 100% locally.</span>
           </div>
-          <Link href="/" className="font-bold text-[#14364f] hover:underline">
+          <Link href="/" className="font-bold text-[#153e54] hover:underline">
             Powered by Dashboardhound.com
           </Link>
         </div>

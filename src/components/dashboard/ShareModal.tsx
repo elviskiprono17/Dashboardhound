@@ -37,9 +37,9 @@ export function ShareModal({ isOpen, onClose, dashboardId, username = 'abloh' }:
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm animate-in fade-in">
       <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden text-slate-800">
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#0d2638] to-[#14364f] text-white px-6 py-5 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-[#0d2638] to-[#153e54] text-white px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 bg-amber-400/20 text-amber-300 rounded-xl border border-amber-400/30">
+            <div className="p-2 bg-sky-500/20 text-sky-300 rounded-xl border border-sky-500/30">
               <Globe className="w-5 h-5" />
             </div>
             <div>
@@ -59,10 +59,10 @@ export function ShareModal({ isOpen, onClose, dashboardId, username = 'abloh' }:
         {/* Content */}
         <div className="p-6 space-y-5">
           {!canShare && (
-            <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start gap-3">
-              <Lock className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+            <div className="p-4 rounded-2xl bg-sky-50 border border-sky-200 text-sky-950 text-xs flex items-start gap-3">
+              <Lock className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
               <div className="flex-1">
-                <span className="font-bold text-amber-950">Free Tier Notice: </span>
+                <span className="font-bold text-sky-950">Free Tier Notice: </span>
                 Dashboards exist strictly in your current browser session. Upgrade to <strong>Starter ($19/mo)</strong> to publish encrypted shareable links!
                 <div className="mt-2">
                   <button
@@ -70,7 +70,7 @@ export function ShareModal({ isOpen, onClose, dashboardId, username = 'abloh' }:
                       onClose();
                       openPaywall('Upgrade to Starter ($19/mo) to unlock one-click vanity share links.', 'starter');
                     }}
-                    className="px-3 py-1.5 bg-[#14364f] text-white font-bold rounded-lg hover:bg-slate-900 transition-colors shadow-sm"
+                    className="px-3 py-1.5 bg-[#153e54] text-white font-bold rounded-lg hover:bg-slate-900 transition-colors shadow-sm"
                   >
                     Unlock Sharing Now
                   </button>
@@ -93,7 +93,7 @@ export function ShareModal({ isOpen, onClose, dashboardId, username = 'abloh' }:
               </div>
               <button
                 onClick={handleCopy}
-                className="px-4 py-2.5 bg-[#14364f] hover:bg-[#0d2638] text-white font-semibold text-xs rounded-xl transition-all flex items-center gap-1.5 shadow-sm shrink-0"
+                className="px-4 py-2.5 bg-[#153e54] hover:bg-[#0d2638] text-white font-semibold text-xs rounded-xl transition-all flex items-center gap-1.5 shadow-sm shrink-0"
               >
                 {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                 <span>{copied ? 'Copied!' : 'Copy Link'}</span>
@@ -112,7 +112,7 @@ export function ShareModal({ isOpen, onClose, dashboardId, username = 'abloh' }:
                 type="checkbox"
                 checked={passwordProtected}
                 onChange={(e) => setPasswordProtected(e.target.checked)}
-                className="w-4 h-4 accent-[#14364f] rounded"
+                className="w-4 h-4 accent-[#153e54] rounded"
               />
             </div>
 
@@ -122,7 +122,7 @@ export function ShareModal({ isOpen, onClose, dashboardId, username = 'abloh' }:
                 placeholder="Set viewing passphrase..."
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-[#14364f]"
+                className="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-[#153e54]"
               />
             )}
           </div>
@@ -133,7 +133,7 @@ export function ShareModal({ isOpen, onClose, dashboardId, username = 'abloh' }:
               href={`/${username}/${dashboardId}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#14364f] font-semibold hover:underline flex items-center gap-1"
+              className="text-[#153e54] font-semibold hover:underline flex items-center gap-1"
             >
               <span>Test Live Shared Preview</span>
               <ExternalLink className="w-3.5 h-3.5" />
