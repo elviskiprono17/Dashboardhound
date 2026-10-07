@@ -1,4 +1,4 @@
-﻿export interface BotQA {
+export interface BotQA {
   keywords: string[];
   question: string;
   answer: string;
@@ -23,13 +23,11 @@ Dashboardhound uses a **Deterministic Hybrid Engine**:
 2. Gemini Flash receives only the verified numbers to provide strategic commentary and recommendations—it never guesses the math!`,
   },
   {
-    keywords: ['price', 'pricing', 'cost', 'plan', 'tier', 'plans', 'free', 'starter', 'pro', 'enterprise'],
+    keywords: ['price', 'pricing', 'cost', 'plan', 'tier', 'plans', 'free', 'solo', 'starter', 'pro', 'business'],
     question: 'What are your pricing plans?',
-    answer: `Dashboardhound offers 4 plans tailored to different needs:
-1. **Free Tier ($0)**: 5MB upload limit, instant interactive charts & global filters. Great for quick zero-friction exploration. (Dashboards cannot be saved or shared).
-2. **Starter Plan ($19/mo billed annually or $25/mo)**: 50MB files, personal dashboard library, 1-click encrypted shareable links, and 100 AI queries/mo.
-3. **Pro / Business ($79/mo billed annually or $99/mo)**: 200MB files, standalone offline HTML, PDF, and PowerPoint exports, template preservation, 3 team seats, unlimited summaries + 500 chatbot queries.
-4. **Enterprise ($249+/mo)**: Up to 1GB files, white-labeling (your logo and custom domain on links), API access, and unlimited AI.`,
+    answer: `Dashboardhound offers 2 straightforward plans:
+1. **Free Tier ($0)**: 5MB upload limit, instant interactive charts & global filters. Great for quick zero-friction exploration in your browser.
+2. **Solo Plan ($5/mo billed annually or $12/mo)**: 200MB files, personal dashboard library, 1-click encrypted shareable links, standalone offline HTML, PDF & PPTX exports, template preservation, and 500 AI queries/mo.`,
   },
   {
     keywords: ['format', 'file', 'formats', 'excel', 'csv', 'tsv', 'json', 'xlsx'],
@@ -42,12 +40,12 @@ Dashboardhound uses a **Deterministic Hybrid Engine**:
     answer: `Paid plans allow you to generate custom branded links like:
 \`www.abloh.dashboardhound.com/dsh_84920f\`
 
-Enterprise plans can also configure custom domains (e.g. \`analytics.yourcompany.com\`) with custom logos! On the Free plan, sharing is locked behind our paywall.`,
+On the Free plan, sharing is locked behind our paywall. Upgrading to Solo unlocks instant link sharing!`,
   },
   {
     keywords: ['export', 'pdf', 'html', 'powerpoint', 'pptx', 'download'],
     question: 'Can I export my dashboards?',
-    answer: `Yes! Pro and Enterprise users can export dashboards into:
+    answer: `Yes! Solo users can export dashboards into:
 - **Standalone Interactive HTML**: Fully self-contained file with charts intact that opens offline in any browser.
 - **Executive PDF Report**: Print-ready high-resolution summary.
 - **PowerPoint (PPTX) Deck**: Formatted presentation slides for stakeholder meetings.`,

@@ -1,8 +1,9 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Sparkles, ShieldCheck, ChevronDown, User, Bot } from 'lucide-react';
+import { MessageSquare, X, Send, Sparkles, ShieldCheck, ChevronDown, User } from 'lucide-react';
 import { getQuickHoundBotReply } from '../../lib/ai/houndBotKnowledge';
+import { FormattedAIMessage } from '../common/FormattedAIMessage';
 
 interface Message {
   id: string;
@@ -51,7 +52,7 @@ export function HoundBot() {
       const botReply: Message = {
         id: `bot-${Date.now()}`,
         sender: 'bot',
-        text: answer || `Thanks for asking! Dashboardhound processes all files completely locally inside your browser memory for 100% data privacy. You can drag and drop any Excel (.xlsx), CSV, or TSV file above to see it in action instantly. Would you like to know more about our **Starter ($19/mo)** or **Pro ($79/mo)** plans?`,
+        text: answer || `Thanks for asking! Dashboardhound processes all files completely locally inside your browser memory for 100% data privacy. You can drag and drop any Excel (.xlsx), CSV, or TSV file above to see it in action instantly. Would you like to know more about our **Solo ($12/mo or $5/mo annual)** plan with 200MB uploads and standalone exports?`,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
 
@@ -69,21 +70,25 @@ export function HoundBot() {
 
   return (
     <div className="fixed bottom-5 right-5 z-40">
-      {/* Floating Trigger Button */}
+      {/* Floating Trigger Button: Circular Dog Logo Only */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="relative group flex items-center gap-2.5 px-4 py-3 bg-[#153e54] hover:bg-[#0d2638] text-white rounded-full shadow-2xl hover:shadow-[#153e54]/50 transition-all hover:scale-105 border border-sky-500/30"
-          title="Chat with HoundBot"
+          className="relative group w-14 h-14 rounded-full bg-white shadow-2xl shadow-slate-900/25 hover:shadow-sky-500/30 border-2 border-slate-200/90 hover:border-sky-400 transition-all duration-300 hover:scale-110 flex items-center justify-center p-2.5 overflow-visible"
+          title="HoundBot"
+          aria-label="HoundBot"
         >
-          <div className="relative">
-            <span className="flex h-3 w-3 absolute -top-1 -right-1">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-400"></span>
-            </span>
-            <Bot className="w-5 h-5 text-sky-300" />
-          </div>
-          <span className="font-bold text-xs">Ask HoundBot</span>
+          <img
+            src="/houndbot-avatar.png"
+            alt="HoundBot"
+            className="w-full h-full object-contain rounded-full select-none"
+          />
+
+          {/* Green Online Status Dot */}
+          <span className="flex h-3.5 w-3.5 absolute -top-0.5 -right-0.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-white shadow-xs"></span>
+          </span>
         </button>
       )}
 
@@ -93,8 +98,8 @@ export function HoundBot() {
           {/* Header */}
           <div className="bg-gradient-to-r from-[#0d2638] to-[#153e54] text-white px-5 py-4 flex items-center justify-between shadow-md">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-sky-400 text-slate-950 flex items-center justify-center font-black text-xs shadow">
-                🐾
+              <div className="w-9 h-9 rounded-full bg-white p-1 overflow-hidden shadow-xs shrink-0 flex items-center justify-center">
+                <img src="/houndbot-avatar.png" alt="HoundBot" className="w-full h-full object-contain rounded-full" />
               </div>
               <div>
                 <h4 className="font-bold text-sm text-white flex items-center gap-1.5">
@@ -120,8 +125,8 @@ export function HoundBot() {
                 className={`flex gap-2.5 ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {m.sender === 'bot' && (
-                  <div className="w-7 h-7 rounded-full bg-[#153e54] text-sky-300 flex items-center justify-center text-xs shrink-0 mt-0.5">
-                    🐾
+                  <div className="w-7 h-7 rounded-full bg-white border border-slate-200 p-0.5 shadow-xs shrink-0 mt-0.5 overflow-hidden flex items-center justify-center">
+                    <img src="/houndbot-avatar.png" alt="HoundBot" className="w-full h-full object-contain rounded-full" />
                   </div>
                 )}
                 <div
@@ -131,7 +136,7 @@ export function HoundBot() {
                       : 'bg-white text-slate-800 border border-slate-200/80 rounded-bl-none shadow-sm'
                   }`}
                 >
-                  <div className="whitespace-pre-line">{m.text}</div>
+                  <FormattedAIMessage content={m.text} isUser={m.sender === 'user'} />
                   <div
                     className={`text-[9px] mt-1 text-right ${
                       m.sender === 'user' ? 'text-slate-300' : 'text-slate-400'
@@ -145,8 +150,8 @@ export function HoundBot() {
 
             {isTyping && (
               <div className="flex items-center gap-2 text-xs text-slate-500 italic py-1">
-                <div className="w-6 h-6 rounded-full bg-slate-200 animate-pulse flex items-center justify-center text-[10px]">
-                  🐾
+                <div className="w-6 h-6 rounded-full bg-white border border-slate-200 p-0.5 shrink-0 overflow-hidden flex items-center justify-center animate-pulse">
+                  <img src="/houndbot-avatar.png" alt="HoundBot" className="w-full h-full object-contain rounded-full" />
                 </div>
                 <span>HoundBot is thinking...</span>
               </div>

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useRef, DragEvent, ChangeEvent } from 'react';
 import { UploadCloud, FileSpreadsheet, AlertCircle, ShieldCheck, CheckCircle2, Loader2, Sparkles } from 'lucide-react';
@@ -7,10 +7,11 @@ import { useSubscription } from '../../lib/context/SubscriptionContext';
 
 interface DropzoneProps {
   onDataLoaded: (data: Record<string, any>[], fileName: string, fileSize: number) => void;
+  onStartLoading?: () => void;
   className?: string;
 }
 
-export function Dropzone({ onDataLoaded, className = '' }: DropzoneProps) {
+export function Dropzone({ onDataLoaded, onStartLoading, className = '' }: DropzoneProps) {
   const { config, openPaywall } = useSubscription();
   const [isDragging, setIsDragging] = useState(false);
   const [isParsing, setIsParsing] = useState(false);
@@ -27,13 +28,14 @@ export function Dropzone({ onDataLoaded, className = '' }: DropzoneProps) {
     if (file.size > maxBytes) {
       const fileSizeMB = (file.size / (1024 * 1024)).toFixed(1);
       openPaywall(
-        `This file is ${fileSizeMB}MB, which exceeds your current ${config.name} limit (${config.fileLimitMB}MB). Upgrade to process larger datasets.`,
-        file.size > 50 * 1024 * 1024 ? 'pro' : 'starter'
+        `This file is ${fileSizeMB}MB, which exceeds your current ${config.name} limit (${config.fileLimitMB}MB). Upgrade to Solo to process datasets up to 200MB.`,
+        'solo'
       );
       return;
     }
 
     try {
+      if (onStartLoading) onStartLoading();
       setIsParsing(true);
       setProgress(10);
 
@@ -77,16 +79,20 @@ export function Dropzone({ onDataLoaded, className = '' }: DropzoneProps) {
   };
 
   return (
-    <div className={`w-full ${className}`}>
+    <div className={`w-full relative group ${className}`}>
+      {/* Outer Multi-layered Radiant Glow */}
+      <div className="absolute -inset-1.5 bg-gradient-to-r from-sky-400 via-cyan-300 to-[#153e54] rounded-[32px] opacity-65 blur-lg group-hover:opacity-95 group-hover:blur-xl transition duration-500 animate-pulse" />
+      <div className="absolute -inset-[1px] bg-gradient-to-r from-sky-400 via-teal-300 to-sky-500 rounded-[28px] opacity-75 group-hover:opacity-100 transition duration-300" />
+
       <div
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
         onClick={() => !isParsing && fileInputRef.current?.click()}
-        className={`relative cursor-pointer rounded-3xl border-2 border-dashed p-8 sm:p-12 text-center transition-all group overflow-hidden ${
+        className={`relative cursor-pointer rounded-[26px] border-2 border-dashed p-8 sm:p-12 text-center transition-all bg-white/95 backdrop-blur-md overflow-hidden ${
           isDragging
-            ? 'border-sky-500 bg-sky-50/50 scale-[1.01]'
-            : 'border-slate-300 hover:border-[#153e54] bg-white/80 hover:bg-slate-50/70 shadow-xl shadow-slate-200/50'
+            ? 'border-sky-500 bg-sky-50/95 scale-[1.01] shadow-2xl shadow-sky-400/40'
+            : 'border-sky-300/80 hover:border-sky-500 hover:bg-white shadow-2xl shadow-sky-500/20 hover:shadow-sky-500/35'
         }`}
       >
         <input
@@ -98,8 +104,8 @@ export function Dropzone({ onDataLoaded, className = '' }: DropzoneProps) {
           disabled={isParsing}
         />
 
-        {/* Ambient Glow */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sky-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+        {/* Ambient Inner Glow */}
+        <div className="absolute inset-0 bg-gradient-to-b from-sky-500/5 via-transparent to-sky-500/10 opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
         {isParsing ? (
           <div className="py-8 flex flex-col items-center justify-center space-y-4">
@@ -119,7 +125,7 @@ export function Dropzone({ onDataLoaded, className = '' }: DropzoneProps) {
         ) : (
           <div className="flex flex-col items-center justify-center space-y-4">
             {/* Upload Icon Circle */}
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#153e54] to-[#1e5276] text-sky-400 flex items-center justify-center shadow-lg shadow-[#153e54]/20 group-hover:scale-110 transition-transform">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#153e54] to-sky-600 text-sky-300 flex items-center justify-center shadow-lg shadow-sky-500/25 group-hover:scale-110 group-hover:shadow-sky-400/40 transition-all">
               <UploadCloud className="w-8 h-8" />
             </div>
 
@@ -134,10 +140,6 @@ export function Dropzone({ onDataLoaded, className = '' }: DropzoneProps) {
 
             {/* Badge Pill */}
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-xs text-slate-600">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span>100% In-Browser & Private</span>
-              </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-600 font-medium">
                 <span>Upload Cap: {config.fileLimitMB}MB ({config.name.split(' ')[0]})</span>
               </div>

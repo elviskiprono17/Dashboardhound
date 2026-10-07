@@ -1,4 +1,4 @@
-﻿export type ColumnType = 'number' | 'string' | 'date' | 'boolean' | 'currency' | 'percentage';
+export type ColumnType = 'number' | 'string' | 'date' | 'boolean' | 'currency' | 'percentage';
 
 export interface CategoryDistribution {
   label: string;
@@ -53,7 +53,7 @@ export interface FilterState {
   numericFilters: Record<string, [number, number]>;
 }
 
-export type SubscriptionTier = 'free' | 'starter' | 'pro' | 'enterprise';
+export type SubscriptionTier = 'free' | 'solo';
 
 export interface SubscriptionConfig {
   tier: SubscriptionTier;

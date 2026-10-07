@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import {
@@ -21,6 +21,7 @@ import {
   answerQueryDeterministically,
 } from '../../lib/ai/deterministicEngine';
 import { useSubscription } from '../../lib/context/SubscriptionContext';
+import { FormattedAIMessage } from '../common/FormattedAIMessage';
 
 interface HoundInsightsPanelProps {
   isOpen: boolean;
@@ -162,8 +163,8 @@ export function HoundInsightsPanel({
         <div className="flex items-center gap-1.5 text-slate-600 font-medium">
           <Zap className="w-3.5 h-3.5 text-sky-500" />
           <span>
-            {tier === 'enterprise' || tier === 'pro' ? (
-              <strong className="text-emerald-700">Unlimited AI Queries Active</strong>
+            {tier === 'solo' ? (
+              <strong className="text-emerald-700">Solo Plan: 500 Monthly AI Queries Active</strong>
             ) : (
               <span>
                 Tokens Remaining: <strong className="text-slate-900">{aiTokensRemaining}</strong> ({tier} tier)
@@ -174,7 +175,7 @@ export function HoundInsightsPanel({
 
         {tier === 'free' && (
           <button
-            onClick={() => openPaywall('Upgrade to Starter ($19/mo) for 100 monthly AI queries.', 'starter')}
+            onClick={() => openPaywall('Upgrade to Solo ($12/mo) for 500 monthly AI queries.', 'solo')}
             className="text-[11px] text-sky-700 font-bold hover:underline flex items-center gap-1"
           >
             <Lock className="w-3 h-3" /> Get More
@@ -224,7 +225,7 @@ export function HoundInsightsPanel({
                 </span>
                 <span className="text-[10px] text-sky-700 font-normal">Generated at {insights.generatedAt}</span>
               </div>
-              <p className="text-xs text-slate-700 leading-relaxed">{insights.overview}</p>
+              <FormattedAIMessage content={insights.overview} className="text-xs text-slate-750" />
             </div>
 
             {/* Key Metric Highlights */}
@@ -303,7 +304,7 @@ export function HoundInsightsPanel({
                         : 'bg-slate-100 text-slate-900 border border-slate-200 rounded-bl-none'
                     }`}
                   >
-                    <div className="whitespace-pre-line">{m.content}</div>
+                    <FormattedAIMessage content={m.content} isUser={m.role === 'user'} />
                     {m.citations && (
                       <div className="mt-2 pt-1 border-t border-slate-200/60 text-[10px] text-slate-500 font-medium">
                         🛡️ {m.citations.join(' • ')}

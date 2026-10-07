@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { SubscriptionTier, SubscriptionConfig } from '../types/dashboard';
@@ -6,7 +6,7 @@ import { SubscriptionTier, SubscriptionConfig } from '../types/dashboard';
 export const TIERS: Record<SubscriptionTier, SubscriptionConfig> = {
   free: {
     tier: 'free',
-    name: 'Free (Growth Engine)',
+    name: 'Free',
     priceMonthly: 0,
     priceAnnually: 0,
     fileLimitMB: 5,
@@ -19,50 +19,20 @@ export const TIERS: Record<SubscriptionTier, SubscriptionConfig> = {
     customDomain: false,
     teamSeats: 1,
   },
-  starter: {
-    tier: 'starter',
-    name: 'Starter / Solo Operator',
-    priceMonthly: 25,
-    priceAnnually: 19,
-    fileLimitMB: 50,
-    aiTokens: 100,
-    canSave: true,
-    canShare: true,
-    canExport: false,
-    exportFormats: ['CSV'],
-    whiteLabel: false,
-    customDomain: false,
-    teamSeats: 1,
-  },
-  pro: {
-    tier: 'pro',
-    name: 'Pro / Business',
-    priceMonthly: 99,
-    priceAnnually: 79,
+  solo: {
+    tier: 'solo',
+    name: 'Solo',
+    priceMonthly: 12,
+    priceAnnually: 5,
     fileLimitMB: 200,
     aiTokens: 500,
     canSave: true,
     canShare: true,
     canExport: true,
     exportFormats: ['HTML', 'PDF', 'PPTX', 'CSV'],
-    whiteLabel: false,
-    customDomain: false,
-    teamSeats: 3,
-  },
-  enterprise: {
-    tier: 'enterprise',
-    name: 'Enterprise / Agency',
-    priceMonthly: 249,
-    priceAnnually: 249,
-    fileLimitMB: 1024,
-    aiTokens: 'unlimited',
-    canSave: true,
-    canShare: true,
-    canExport: true,
-    exportFormats: ['HTML', 'PDF', 'PPTX', 'CSV', 'API'],
     whiteLabel: true,
     customDomain: true,
-    teamSeats: 10,
+    teamSeats: 1,
   },
 };
 
@@ -92,29 +62,26 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
   const [aiTokensRemaining, setAiTokensRemaining] = useState<number>(3);
   const [isPaywallOpen, setIsPaywallOpen] = useState(false);
   const [paywallReason, setPaywallReason] = useState('');
-  const [recommendedTier, setRecommendedTier] = useState<SubscriptionTier>('starter');
+  const [recommendedTier, setRecommendedTier] = useState<SubscriptionTier>('solo');
 
   useEffect(() => {
     // Load persisted state if exists
     try {
-      const savedTier = localStorage.getItem('dh_tier') as SubscriptionTier;
-      if (savedTier && TIERS[savedTier]) {
-        setTier(savedTier);
-        if (savedTier === 'free') {
-          const tokens = localStorage.getItem('dh_free_tokens');
-          setAiTokensRemaining(tokens !== null ? parseInt(tokens, 10) : 3);
-        } else if (savedTier === 'starter') {
-          setAiTokensRemaining(100);
-        } else {
-          setAiTokensRemaining(9999);
-        }
+      const savedTier = localStorage.getItem('dh_tier') as string;
+      if (savedTier === 'solo' || savedTier === 'starter' || savedTier === 'pro') {
+        setTier('solo');
+        setAiTokensRemaining(500);
+      } else {
+        setTier('free');
+        const tokens = localStorage.getItem('dh_free_tokens');
+        setAiTokensRemaining(tokens !== null ? parseInt(tokens, 10) : 3);
       }
     } catch (e) {
       // ignore
     }
   }, []);
 
-  const openPaywall = (reason: string, recommended: SubscriptionTier = 'starter') => {
+  const openPaywall = (reason: string, recommended: SubscriptionTier = 'solo') => {
     setPaywallReason(reason);
     setRecommendedTier(recommended);
     setIsPaywallOpen(true);
@@ -130,18 +97,16 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       localStorage.setItem('dh_tier', newTier);
     } catch (e) {}
 
-    if (newTier === 'starter') {
-      setAiTokensRemaining(100);
-    } else if (newTier === 'pro' || newTier === 'enterprise') {
-      setAiTokensRemaining(9999);
+    if (newTier === 'solo') {
+      setAiTokensRemaining(500);
     }
     setIsPaywallOpen(false);
   };
 
   const consumeAIToken = (): boolean => {
-    if (tier === 'enterprise' || tier === 'pro') return true;
+    if (tier === 'solo') return true;
     if (aiTokensRemaining <= 0) {
-      openPaywall('You have reached your monthly AI query limit. Upgrade to continue generating automated insights.', 'starter');
+      openPaywall('You have reached your monthly AI query limit. Upgrade to continue generating automated insights.', 'solo');
       return false;
     }
     const updated = aiTokensRemaining - 1;

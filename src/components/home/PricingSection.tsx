@@ -1,8 +1,8 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { useSubscription, TIERS } from '../../lib/context/SubscriptionContext';
-import { Check, Sparkles, Shield, ArrowRight, Zap, Globe, FileSpreadsheet, Lock } from 'lucide-react';
+import { Check, Sparkles, ArrowRight, Lock } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { SubscriptionTier } from '../../lib/types/dashboard';
 
@@ -22,25 +22,24 @@ export function PricingSection() {
     upgradeToTier(selectedTier);
   };
 
-  const starterPrice = billingCycle === 'annually' ? TIERS.starter.priceAnnually : TIERS.starter.priceMonthly;
-  const proPrice = billingCycle === 'annually' ? TIERS.pro.priceAnnually : TIERS.pro.priceMonthly;
+  const soloPrice = billingCycle === 'annually' ? TIERS.solo.priceAnnually : TIERS.solo.priceMonthly;
 
   return (
     <section id="pricing" className="py-20 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-sky-300 text-xs font-bold uppercase tracking-wider mb-4 border border-white/10">
-            Transparent, Value-Driven Pricing
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4 border border-white/10">
+            Simple, Transparent Pricing
           </div>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
-            From Zero-Friction Exploration to Enterprise Scale
+            Choose the Perfect Plan for Your Analytics
           </h2>
           <p className="mt-4 text-slate-400 text-base">
-            Start free with zero friction. Upgrade whenever you need to save dashboards, share vanity links, or export standalone presentations.
+            Start free with zero friction. Upgrade to Solo anytime to save dashboards permanently, share custom branded links, or export standalone presentation-ready reports.
           </p>
 
           {/* Billing Switch */}
@@ -56,39 +55,39 @@ export function PricingSection() {
             <button
               onClick={() => setBillingCycle('annually')}
               className={`px-5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
-                billingCycle === 'annually' ? 'bg-sky-400 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
+                billingCycle === 'annually' ? 'bg-emerald-400 text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'
               }`}
             >
               <span>Annual Billing</span>
-              <span className="text-[10px] uppercase tracking-wider bg-slate-950 text-sky-300 px-2 py-0.5 rounded-full font-extrabold">
-                Save 20%
+              <span className="text-[10px] uppercase tracking-wider bg-slate-950 text-emerald-300 px-2 py-0.5 rounded-full font-extrabold">
+                Save 58%
               </span>
             </button>
           </div>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Pricing Cards Grid - Exactly 2 Plans: Free & Solo */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-2xl mx-auto">
           {/* 1. Free Tier */}
-          <div className="rounded-3xl p-7 bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 transition-all flex flex-col justify-between">
+          <div className="rounded-2xl p-6 bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 transition-all flex flex-col justify-between">
             <div>
               <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-1">
-                The Growth Engine
+                Zero Friction Exploration
               </div>
               <h3 className="text-xl font-extrabold text-white">Free</h3>
-              <p className="text-xs text-slate-400 mt-2 min-h-[36px]">
+              <p className="text-xs text-slate-400 mt-1.5 min-h-[32px]">
                 Instant time-to-aha moment. See how gorgeous your data looks in seconds.
               </p>
 
-              <div className="my-6">
-                <span className="text-4xl font-black text-white">$0</span>
+              <div className="my-5">
+                <span className="text-3xl font-black text-white">$0</span>
                 <span className="text-xs text-slate-400"> / forever</span>
               </div>
 
-              <ul className="space-y-3 text-xs text-slate-300 mb-8">
+              <ul className="space-y-2.5 text-xs text-slate-300 mb-6">
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>5MB</strong> upload (Excel, CSV, TSV)</span>
+                  <span><strong>5MB</strong> upload limit (Excel, CSV, TSV, JSON)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -96,7 +95,7 @@ export function PricingSection() {
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span>Global filtering & custom charts</span>
+                  <span>Global filtering &amp; custom charts</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -104,18 +103,18 @@ export function PricingSection() {
                 </li>
                 <li className="flex items-start gap-2 text-slate-500 line-through">
                   <Lock className="w-4 h-4 shrink-0 mt-0.5" />
-                  <span>Save to library or share URL</span>
+                  <span>Save to library or share vanity link</span>
                 </li>
                 <li className="flex items-start gap-2 text-slate-500 line-through">
                   <Lock className="w-4 h-4 shrink-0 mt-0.5" />
-                  <span>HTML, PDF & PPTX exports</span>
+                  <span>Standalone HTML, PDF &amp; PPTX exports</span>
                 </li>
               </ul>
             </div>
 
             <button
               onClick={() => handleSelectPlan('free')}
-              className={`w-full py-3 rounded-2xl text-xs font-bold transition-all ${
+              className={`w-full py-3 rounded-xl text-xs font-bold transition-all ${
                 tier === 'free'
                   ? 'bg-slate-700 text-slate-300 cursor-default'
                   : 'bg-slate-700 hover:bg-slate-600 text-white'
@@ -125,170 +124,72 @@ export function PricingSection() {
             </button>
           </div>
 
-          {/* 2. Starter Plan */}
-          <div className="rounded-3xl p-7 bg-slate-800/80 border border-sky-500/60 hover:border-sky-400 transition-all flex flex-col justify-between relative shadow-lg shadow-sky-950/40">
+          {/* 2. Solo Plan ($12/mo or $5/mo billed annually) - Upgraded with 200MB & Business features */}
+          <div className="rounded-2xl p-6 bg-gradient-to-b from-slate-800 via-slate-800 to-emerald-950/30 border-2 border-emerald-400 hover:border-emerald-300 transition-all flex flex-col justify-between relative shadow-xl shadow-emerald-950/60">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-0.5 rounded-full shadow-lg shadow-emerald-500/20 flex items-center gap-1 whitespace-nowrap">
+              <Sparkles className="w-3 h-3 text-slate-950" /> Most Popular • Full Power Solo
+            </div>
+
             <div>
-              <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-1">
-                Solo Operators & Freelancers
+              <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1 mt-0.5">
+                Founders, Freelancers &amp; Solo Analysts
               </div>
-              <h3 className="text-xl font-extrabold text-white">Starter</h3>
-              <p className="text-xs text-slate-400 mt-2 min-h-[36px]">
-                Save dashboards to personal history & generate client-ready share links.
+              <h3 className="text-xl font-extrabold text-white flex items-center gap-2">
+                Solo
+              </h3>
+              <p className="text-xs text-slate-300 mt-1.5 min-h-[32px]">
+                Full business-grade power: 200MB uploads, vanity links, and standalone presentation exports.
               </p>
 
-              <div className="my-6">
-                <span className="text-4xl font-black text-white">${starterPrice}</span>
+              <div className="my-5">
+                <span className="text-3xl font-black text-white">${soloPrice}</span>
                 <span className="text-xs text-slate-400"> / month</span>
-                {billingCycle === 'annually' && (
-                  <div className="text-[11px] text-emerald-400 font-semibold mt-1">$228 billed annually</div>
-                )}
+                <div className="text-[11px] text-emerald-400 font-semibold mt-0.5">
+                  {billingCycle === 'annually' ? '$60 billed annually (Save 58%)' : 'or $5/mo billed annually'}
+                </div>
               </div>
 
-              <ul className="space-y-3 text-xs text-slate-300 mb-8">
+              <ul className="space-y-2.5 text-xs text-slate-200 mb-6">
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span><strong>50MB</strong> file upload limit (10x Free)</span>
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>200MB</strong> file upload limit (Excel, CSV, TSV, JSON)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span><strong>Save to Personal Dashboard Library</strong></span>
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Save Unlimited Dashboards</strong> to Library</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span><strong>1-Click Encrypted Share Links</strong> (<code className="text-[10px] bg-slate-900 px-1 py-0.5 rounded text-sky-300">abloh.dashboardhound.com/...</code>)</span>
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>1-Click Encrypted Vanity Links</strong> (<code className="text-[10px] bg-slate-900 px-1 py-0.5 rounded text-emerald-300">abloh.dashboardhound.com/...</code>)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span><strong>100 AI Tokens / month</strong> (Hound Insights summaries & Q&A)</span>
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Standalone HTML, PDF &amp; PPTX</strong> Exports</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span>Full CSV dataset export</span>
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Template Preservation</strong> (recurring updates)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Unlimited Summaries + 500 AI Queries / mo</strong></span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Custom Branded Share Links</strong> &amp; White-Label</span>
                 </li>
               </ul>
             </div>
 
             <button
-              onClick={() => handleSelectPlan('starter')}
-              className={`w-full py-3 rounded-2xl text-xs font-bold transition-all shadow-md ${
-                tier === 'starter'
-                  ? 'bg-sky-500 text-slate-950 font-extrabold cursor-default'
-                  : 'bg-sky-500 hover:bg-sky-400 text-slate-950 font-extrabold'
+              onClick={() => handleSelectPlan('solo')}
+              className={`w-full py-3 rounded-xl text-xs font-black transition-all shadow-lg ${
+                tier === 'solo'
+                  ? 'bg-emerald-400 text-slate-950 cursor-default'
+                  : 'bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-400 hover:from-emerald-300 hover:to-emerald-400 text-slate-950 shadow-emerald-500/25'
               }`}
             >
-              {tier === 'starter' ? 'Current Plan' : 'Upgrade to Starter'}
-            </button>
-          </div>
-
-          {/* 3. Pro / Business Plan */}
-          <div className="rounded-3xl p-7 bg-gradient-to-b from-slate-800 to-slate-850 border-2 border-sky-400 hover:border-sky-300 transition-all flex flex-col justify-between relative shadow-2xl shadow-sky-950/50">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sky-400 to-sky-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md flex items-center gap-1">
-              <Sparkles className="w-3 h-3" /> The Sweet Spot for Teams
-            </div>
-
-            <div>
-              <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-1">
-                Small Agencies & Departments
-              </div>
-              <h3 className="text-xl font-extrabold text-white">Pro / Business</h3>
-              <p className="text-xs text-slate-300 mt-2 min-h-[36px]">
-                Standalone offline HTML, PDF & PPTX exports, multi-user seats, and template preservation.
-              </p>
-
-              <div className="my-6">
-                <span className="text-4xl font-black text-white">${proPrice}</span>
-                <span className="text-xs text-slate-400"> / month</span>
-                {billingCycle === 'annually' && (
-                  <div className="text-[11px] text-sky-300 font-semibold mt-1">$948 billed annually</div>
-                )}
-              </div>
-
-              <ul className="space-y-3 text-xs text-slate-200 mb-8">
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span><strong>200MB</strong> file upload limit</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span><strong>Standalone HTML, PDF & PPTX</strong> exports</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span><strong>Template Preservation</strong> (effortless weekly re-upload)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span><strong>Multi-user seat access</strong> (up to 3 team members)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span><strong>Unlimited Summaries + 500 Chatbot Queries / mo</strong></span>
-                </li>
-              </ul>
-            </div>
-
-            <button
-              onClick={() => handleSelectPlan('pro')}
-              className={`w-full py-3 rounded-2xl text-xs font-extrabold transition-all shadow-lg ${
-                tier === 'pro'
-                  ? 'bg-sky-400 text-slate-950 cursor-default'
-                  : 'bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-300 hover:to-sky-400 text-slate-950'
-              }`}
-            >
-              {tier === 'pro' ? 'Current Plan' : 'Upgrade to Pro'}
-            </button>
-          </div>
-
-          {/* 4. Enterprise Tier */}
-          <div className="rounded-3xl p-7 bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 transition-all flex flex-col justify-between">
-            <div>
-              <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">
-                Heavy Data Consumers & Agencies
-              </div>
-              <h3 className="text-xl font-extrabold text-white">Enterprise</h3>
-              <p className="text-xs text-slate-400 mt-2 min-h-[36px]">
-                White-labeling, custom agency branding, 1GB capacity, and API embedding.
-              </p>
-
-              <div className="my-6">
-                <span className="text-4xl font-black text-white">$249+</span>
-                <span className="text-xs text-slate-400"> / month</span>
-                <div className="text-[11px] text-slate-400 font-semibold mt-1">Custom agency contracts</div>
-              </div>
-
-              <ul className="space-y-3 text-xs text-slate-300 mb-8">
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>1GB</strong> dedicated file upload cap</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>White-Labeling</strong> (remove Dashboardhound logos, use own domain & logo)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>API access</strong> to embed dashboards in client portals</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong>100% Unlimited AI usage</strong> across all dashboards & chatbots</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span>Dedicated priority account manager</span>
-                </li>
-              </ul>
-            </div>
-
-            <button
-              onClick={() => handleSelectPlan('enterprise')}
-              className={`w-full py-3 rounded-2xl text-xs font-bold transition-all ${
-                tier === 'enterprise'
-                  ? 'bg-slate-700 text-slate-300 cursor-default'
-                  : 'bg-white text-slate-900 hover:bg-slate-100'
-              }`}
-            >
-              {tier === 'enterprise' ? 'Current Plan' : 'Contact Enterprise'}
+              {tier === 'solo' ? 'Current Plan' : 'Upgrade to Solo'}
             </button>
           </div>
         </div>

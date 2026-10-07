@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Globe, Copy, Check, Lock, ShieldCheck, QrCode, X, ExternalLink, Code } from 'lucide-react';
@@ -25,7 +25,7 @@ export function ShareModal({ isOpen, onClose, dashboardId, username = 'abloh' }:
 
   const handleCopy = () => {
     if (!canShare) {
-      openPaywall('Generating shareable links is locked on the Free plan. Upgrade to Starter to share with clients or colleagues.', 'starter');
+      openPaywall('Generating shareable links is locked on the Free plan. Upgrade to Solo ($12/mo) to share with clients or colleagues.', 'solo');
       return;
     }
     navigator.clipboard.writeText(vanityUrl);
@@ -63,12 +63,12 @@ export function ShareModal({ isOpen, onClose, dashboardId, username = 'abloh' }:
               <Lock className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
               <div className="flex-1">
                 <span className="font-bold text-sky-950">Free Tier Notice: </span>
-                Dashboards exist strictly in your current browser session. Upgrade to <strong>Starter ($19/mo)</strong> to publish encrypted shareable links!
+                Dashboards exist strictly in your current browser session. Upgrade to <strong>Solo ($12/mo)</strong> to publish encrypted shareable links!
                 <div className="mt-2">
                   <button
                     onClick={() => {
                       onClose();
-                      openPaywall('Upgrade to Starter ($19/mo) to unlock one-click vanity share links.', 'starter');
+                      openPaywall('Upgrade to Solo ($12/mo) to unlock one-click vanity share links.', 'solo');
                     }}
                     className="px-3 py-1.5 bg-[#153e54] text-white font-bold rounded-lg hover:bg-slate-900 transition-colors shadow-sm"
                   >

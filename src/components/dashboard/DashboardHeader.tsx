@@ -64,7 +64,7 @@ export function DashboardHeader({
 
   const handleSaveClick = () => {
     if (!canSave) {
-      openPaywall('Saving dashboards to your personal library is available on Starter ($19/mo) and Pro plans.', 'starter');
+      openPaywall('Saving dashboards to your personal library is available on the Solo plan ($12/mo).', 'solo');
       return;
     }
     onSave();
@@ -72,7 +72,7 @@ export function DashboardHeader({
 
   const handleShareClick = () => {
     if (!canShare) {
-      openPaywall('Generating encrypted, shareable vanity links requires a Starter ($19/mo) or Pro plan.', 'starter');
+      openPaywall('Generating encrypted, shareable vanity links is available on the Solo plan ($12/mo).', 'solo');
       return;
     }
     onOpenShare();
@@ -81,7 +81,7 @@ export function DashboardHeader({
   const handleExportClick = (format: 'html' | 'pdf' | 'pptx' | 'csv') => {
     setIsExportOpen(false);
     if (format !== 'csv' && !canExport) {
-      openPaywall(`Exporting to Standalone Interactive HTML, PDF, and PowerPoint is unlocked on the Pro plan ($79/mo).`, 'pro');
+      openPaywall('Exporting to Standalone Interactive HTML, PDF, and PowerPoint is unlocked on the Solo plan ($12/mo).', 'solo');
       return;
     }
     onExport(format);
