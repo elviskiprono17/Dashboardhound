@@ -39,13 +39,6 @@ export function Hero({ onDatasetSelected, onStartLoading }: HeroProps) {
         <div className="max-w-3xl mx-auto">
           <Dropzone onDataLoaded={onDatasetSelected} onStartLoading={onStartLoading} />
         </div>
-
-        {/* Privacy & Feature Guarantee Subtext */}
-        <div className="mt-5 text-center max-w-2xl mx-auto">
-          <p className="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed">
-            Drop your Excel, CSV, or JSON file — processed 100% in your browser. Zero uploads, zero leakage, instant AI-powered charts.
-          </p>
-        </div>
       </div>
     </section>
   );

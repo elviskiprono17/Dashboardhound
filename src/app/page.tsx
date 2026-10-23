@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Navbar } from '@/components/common/Navbar';
 import { Hero } from '@/components/home/Hero';
 import { PricingSection } from '@/components/home/PricingSection';
-import { PrivacySection } from '@/components/home/PrivacySection';
 import { TemplatesSection } from '@/components/home/TemplatesSection';
 import { DashboardSkeletonLoader } from '@/components/dashboard/DashboardSkeletonLoader';
 import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
@@ -324,9 +323,6 @@ export default function HomePage() {
           }}
         />
 
-        {/* 100% In-Browser Privacy Section (Between Ticker and Templates) */}
-        <PrivacySection />
-
         {/* Visualization Templates Section */}
         <TemplatesSection onSelectTemplate={handleSelectTemplate} />
 
@@ -346,11 +342,11 @@ export default function HomePage() {
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="#privacy" className="hover:text-white transition-colors">
-              Privacy Guarantee
+            <a href="#templates" className="hover:text-white transition-colors">
+              Templates
             </a>
-            <a href="#features" className="hover:text-white transition-colors">
-              Layouts
+            <a href="#vanity-urls" className="hover:text-white transition-colors">
+              Vanity URLs
             </a>
             <a href="#pricing" className="hover:text-white transition-colors">
               Pricing Plans

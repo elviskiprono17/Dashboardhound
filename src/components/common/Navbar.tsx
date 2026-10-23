@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ShieldCheck, Sparkles, User } from 'lucide-react';
+import { Sparkles, User } from 'lucide-react';
 import { useSubscription } from '../../lib/context/SubscriptionContext';
 
 export function Navbar() {
@@ -24,15 +24,12 @@ export function Navbar() {
         </Link>
 
         {/* Nav Links - Centered on Navbar */}
-        <nav className="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-600 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <a href="#features" className="hover:text-[#153e54] transition-colors">
-            Features
-          </a>
-          <a href="#privacy" className="hover:text-[#153e54] transition-colors flex items-center gap-1">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> 100% In-Browser Privacy
-          </a>
+        <nav className="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-600 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <a href="#templates" className="hover:text-[#153e54] transition-colors">
-            Presets &amp; Templates
+            Templates
+          </a>
+          <a href="#vanity-urls" className="hover:text-[#153e54] transition-colors">
+            Vanity URLs
           </a>
           <a href="#pricing" className="hover:text-[#153e54] transition-colors">
             Pricing
@@ -43,7 +40,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           {/* Current Tier Badge */}
           <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
-            <span className={`w-2 h-2 rounded-full ${tier === 'free' ? 'bg-slate-400' : 'bg-emerald-500'}`} />
+            <span className={`w-2 h-2 rounded-full ${tier === 'free' ? 'bg-slate-400' : 'bg-amber-400'}`} />
             <span className="capitalize">{tier}</span>
           </div>
 
